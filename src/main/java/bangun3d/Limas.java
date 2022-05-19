@@ -20,7 +20,7 @@ public class Limas {
         return alas;
     }
 
-    public void setAlas(Segitiga alas) {
+    public void setAlas(Bangun2D alas) {
         this.alas = alas;
     }
 
