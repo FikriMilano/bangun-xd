@@ -1,6 +1,7 @@
 package bangun3d;
 
 import bangun2d.*;
+import master.Matematika;
 
 public class Limas {
     private Bangun2D alas;
@@ -9,7 +10,7 @@ public class Limas {
 //    private SegitigaSamaKaki sisiTegak;
     private double tinggi;
 
-    public Limas(Segitiga alas, double tinggi) {
+    public Limas(Bangun2D alas, double tinggi) {
         this.alas = alas;
         this.tinggi = tinggi;
 //        TODO -> Fix rumus luas permukaan
@@ -33,13 +34,35 @@ public class Limas {
     }
 
     public double getVolume() {
-        return 3 / alas.getLuas() * tinggi;
+        return (alas.getLuas() * tinggi) / 3;
     }
 
-//    TODO -> Fix rumus luas permukaan
-//    public double getLuasPermukaan() {
-//        return alas.getLuas() + alas.getKeliling() * tinggi;
-//    }
+    public double getLuasAlas(){
+        return alas.getLuas();
+    }
+
+    public double getLuas(){
+        if (alas instanceof Persegi) {
+            double a = Matematika.getMiring(((Persegi) alas).getSisi() / 2, tinggi);
+            double b = ((Persegi) alas).getSisi() * a / 2;
+            return alas.getLuas() + b * 4;
+        } else if (alas instanceof PersegiPanjang) {
+            double a = Matematika.getMiring(((PersegiPanjang) alas).getPanjang() / 2, tinggi);
+            double b = Matematika.getMiring(((PersegiPanjang) alas).getLebar() / 2, tinggi);
+            double c = ((PersegiPanjang) alas).getLebar() * a / 2;
+            double d = ((PersegiPanjang) alas).getPanjang() * b / 2;
+            return alas.getLuas() + (2 * c) + (2 * d); 
+        } else if (alas instanceof Segitiga) {
+            return alas.getLuas() * 3;
+        } else if (alas instanceof Lingkaran) {
+            double s = ((Lingkaran) alas).getR() * ((Lingkaran) alas).getR() + tinggi * tinggi;
+            double sf = Math.sqrt(s);
+            double selimut = Matematika.phi * ((Lingkaran) alas).getR() * sf;
+            return alas.getLuas() + selimut;
+        } else {
+            return 0;
+        }
+    }
 
     public String getDetailAlas() {
         if (alas instanceof Persegi) {
