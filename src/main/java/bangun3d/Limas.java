@@ -5,16 +5,11 @@ import master.Matematika;
 
 public class Limas {
     private Bangun2D alas;
-
-//    TODO -> Fix rumus luas permukaan
-//    private SegitigaSamaKaki sisiTegak;
     private double tinggi;
 
     public Limas(Bangun2D alas, double tinggi) {
         this.alas = alas;
         this.tinggi = tinggi;
-//        TODO -> Fix rumus luas permukaan
-//        this.sisiTegak =
     }
 
     public Bangun2D getAlas() {
@@ -37,11 +32,11 @@ public class Limas {
         return (alas.getLuas() * tinggi) / 3;
     }
 
-    public double getLuasAlas(){
+    public double getLuasAlas() {
         return alas.getLuas();
     }
 
-    public double getLuas(){
+    public double getLuas() {
         if (alas instanceof Persegi) {
             double a = Matematika.getMiring(((Persegi) alas).getSisi() / 2, tinggi);
             double b = ((Persegi) alas).getSisi() * a / 2;
@@ -51,7 +46,7 @@ public class Limas {
             double b = Matematika.getMiring(((PersegiPanjang) alas).getLebar() / 2, tinggi);
             double c = ((PersegiPanjang) alas).getLebar() * a / 2;
             double d = ((PersegiPanjang) alas).getPanjang() * b / 2;
-            return alas.getLuas() + (2 * c) + (2 * d); 
+            return alas.getLuas() + (2 * c) + (2 * d);
         } else if (alas instanceof Segitiga) {
             return alas.getLuas() * 3;
         } else if (alas instanceof Lingkaran) {
