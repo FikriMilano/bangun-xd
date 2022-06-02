@@ -5,35 +5,35 @@ import bangun2d.*;
 public class LimasApp {
     public static void main(String[] args) {
 
-        Bangun2D kucut = new Lingkaran(6);
-        Limas alasling = new Limas(kucut, 8);
-        System.out.println(alasling);
-        System.out.println(alasling.getLuas());
-        System.out.println(alasling.getVolume());
+        Bangun2D alasLingkaran = new Lingkaran(6);
+        Limas limasLingkaran = new Limas(alasLingkaran, 8);
+        System.out.println(limasLingkaran);
+        System.out.println(limasLingkaran.getLuas());
+        System.out.println(limasLingkaran.getVolume());
 
         System.out.println("-------------------------------------");
 
-        Persegi persegi = new Persegi(10);
-        Limas alasper = new Limas(persegi, 12);
-        System.out.println(alasper);
-        System.out.println(alasper.getLuas());
-        System.out.println(alasper.getVolume());
+        Persegi alasPersegi = new Persegi(10);
+        Limas limasPersegi = new Limas(alasPersegi, 12);
+        System.out.println(limasPersegi);
+        System.out.println(limasPersegi.getLuas());
+        System.out.println(limasPersegi.getVolume());
 
         System.out.println("-------------------------------------");
 
-        PersegiPanjang pp = new PersegiPanjang(6, 5);
-        Limas alaspp = new Limas(pp, 4);
-        System.out.println(alaspp);
-        System.out.println(alaspp.getLuas());
-        System.out.println(alaspp.getVolume());
+        PersegiPanjang alasPersegiPanjang = new PersegiPanjang(6, 5);
+        Limas limasPersegiPanjang = new Limas(alasPersegiPanjang, 4);
+        System.out.println(limasPersegiPanjang);
+        System.out.println(limasPersegiPanjang.getLuas());
+        System.out.println(limasPersegiPanjang.getVolume());
 
         System.out.println("-------------------------------------");
 
-        Segitiga st = new SegitigaSamaKaki(10, 15);
-        Limas alasst = new Limas(st, 8);
-        System.out.println(alasst);
-        System.out.println(alasst.getLuas());
-        System.out.println(alasst.getVolume());
+        Segitiga alasSegitigaSamaKaki = new SegitigaSamaKaki(10, 15);
+        Limas limasSegitigaSamaKaki = new Limas(alasSegitigaSamaKaki, 8);
+        System.out.println(limasSegitigaSamaKaki);
+        System.out.println(limasSegitigaSamaKaki.getLuas());
+        System.out.println(limasSegitigaSamaKaki.getVolume());
 
         System.out.println("-------------------------------------");
     }
